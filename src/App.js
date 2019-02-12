@@ -1,14 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {Button, SideNav, SideNavItem} from 'react-materialize'
 import './App.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIgloo } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faIgloo)
 
 class App extends Component {
   render() {
     return (
       <div class="container" >
+        <SideNav
+          trigger={<i id="hamburger" class="medium material-icons black-text">menu</i>}
+          options={{ closeOnClick: true }}
+          >
+          <SideNavItem userView
+            user={{
+              image: './images/beard.png'
+            }}
+          />
+          <SideNavItem href='#!icon' icon='cloud'>First Link With Icon</SideNavItem>
+          <SideNavItem href='#!second'>Second Link</SideNavItem>
+          <SideNavItem divider />
+          <SideNavItem subheader>Social</SideNavItem>
+          <SideNavItem waves href='https://github.com/kylecom2000'>
+            <FontAwesomeIcon icon="cloud" />GitHub</SideNavItem>
+        </SideNav>
             <div class="row" id="top-bar">
                 <div class="col s3">
-                    <a href="#" data-target="slide-out" class="sidenav-trigger" id="MyMenu"><i id="hamburger" class="medium material-icons black-text">menu</i></a>
+                    <a href="/" data-target="slide-out" class="sidenav-trigger" id="MyMenu"><i id="hamburger" class="medium material-icons black-text">menu</i></a>
                 </div>
                 <div class="col s6">
                     <h1 href="#">Kyle Bauer</h1>
@@ -25,16 +46,16 @@ class App extends Component {
                     </h4>
                 </div>
                 <div class="col s3">
-                    <a href="#user"><img class="large responsive-img" id="beard" alt="@fat.cheetah" src="assets/images/beardL.png"></img></a>
+                    <a href="#user"><img class="large responsive-img" id="beard" alt="@fat.cheetah" src="./images/beardL.png"></img></a>
                 </div>
             </div>
                         
-// 1st Parallax Image
+{/* // 1st Parallax Image */}
             <div class="parallax-container">
-                <div class="parallax"><img src="assets/images/01Background.jpg"></img>
+                <div class="parallax"><img src="./images/01Background.jpg" alt="Kyle Bauer"></img>
                 </div>
             </div>
-// About Me Section
+{/* // About Me Section */}
             <div class="section white">
                 <div class="row container">
                     <h2 class="header center section scrollspy" id="AboutMe">About Me</h2>
@@ -44,7 +65,7 @@ class App extends Component {
                         Web Developer with 10 years of experience in IT helpdesk for the U.S. Coast Guard.  Strong 
                         background in troubleshooting and understanding user-friendly solutions to everyday problems and training on how to utilize technology using plain english. Recent college graduate with a BS in psychology which has provided even more perspective on the human experience and a keen sense on what people are looking for in design.  Passionate about helping others achieve their goals through collaboration by pointing out their strengths and using them to their best ability. Always continuing to strengthen my abilities as a web developer and as a small team leader.
                     </p>
-// Collapsible menu in ABOUT ME
+{/* // Collapsible menu in ABOUT ME */}
                     <ul class="collapsible">
                         <li>
                             <div class="collapsible-header section scrollspy"><i class="fas fa-dungeon"></i>More About Me</div>
@@ -54,7 +75,7 @@ class App extends Component {
                                 </span>
                               </div>
                         </li>
-// EDUCATION DROPDOWN
+{/* // EDUCATION DROPDOWN */}
                         <li>    
                             <div class="collapsible-header"><i class="fas fa-book-reader"></i>Education</div>
                             <div class="collapsible-body"><span>
@@ -83,7 +104,7 @@ class App extends Component {
                                 </span>
                             </div>
                         </li>
-// Technical SKills Dropdown
+{/* // Technical SKills Dropdown */}
                         <li>    
                             <div class="collapsible-header"><i class="fas fa-briefcase"></i>Technical Skills</div>
                             <div class="collapsible-body"><span>
@@ -130,7 +151,7 @@ class App extends Component {
                                 </span>
                             </div>
                         </li>
-// Work History Dropdown
+{/* // Work History Dropdown */}
                         <li>
                             <div class="collapsible-header"><i class="fas fa-building"></i>Work History</div>
                             <div class="collapsible-body"><span>
@@ -178,11 +199,11 @@ class App extends Component {
                     
                 </div>
             </div>
-// 2nd Parallax image
+{/* // 2nd Parallax image */}
             <div class="parallax-container">
-                <div class="parallax"><img src="assets/images/kyleWall.png"></img></div>
+                <div class="parallax"><img src="./images/kyleWall.png" alt="Kyle B."></img></div>
             </div>
-// Portfolio Section
+{/* // Portfolio Section */}
             <div class="section white">
                     <h2 class="header center section scrollspy" id="Portfolio">Portfolio</h2>
                     <br/>
@@ -190,50 +211,50 @@ class App extends Component {
                     <div class="slider">
                         <ul class="slides">
                             <li>
-                                <img class="sliderImage" src="assets/images/grocherie.png"></img>
+                                <img class="sliderImage" src="./images/grocherie.png" alt="Grodheri App"></img>
                                 <div class="caption left-align">
-                                    <a href="https://grocherie.herokuapp.com/" target="_blank"><h3 class="btn">Grochérie <i class="fas fa-arrow-circle-right"></i></h3></a>
+                                    <a href="https://grocherie.herokuapp.com/" target="_blank" rel="noopener noreferrer"><h3 class="btn">Grochérie <i class="fas fa-arrow-circle-right"></i></h3></a>
                                     <h5>Team Project/Authentication</h5>
                                     <p>Grochérie is a web app that allows multiple users to view, edit, and complete shopping lists shared across devices. It's geared towards roommates, families, offices, or any groups of people that shop together. </p>
                                 </div>
                             </li>
                             <li>
-                                <img class="sliderImage" src="assets/images/ido.png"></img>
+                                <img class="sliderImage" src="./images/ido.png" alt="I.Do App"></img>
                                 <div class="caption right-align">
-                                    <a href="https://i-dooo.herokuapp.com/" target="_blank"><h3 class="btn">i.Do <i class="fas fa-arrow-circle-right"></i></h3></a>
+                                    <a href="https://i-dooo.herokuapp.com/" target="_blank" rel="noopener noreferrer"><h3 class="btn">i.Do <i class="fas fa-arrow-circle-right"></i></h3></a>
                                     <h5>React.JS/#TeamDad</h5>
                                     <p> Getting address' from multiple sources and combining them into a single address book can be time consuming.
                                     This app allows people to create themselves inside someone else's contacts. By allowing individuals to submit their own data, some of the burden of event planning to be automated.</p>
                                 </div>
                             </li>
                             <li>
-                                <img class="sliderImage" src="assets/images/ForkOff.png"></img>
+                                <img class="sliderImage" src="./images/ForkOff.png" alt="Fork Off!"></img>
                                 <div class="caption left-align">
-                                    <a href="https://kylecom2000.github.io/TeamOne-ProjectOne/" target="_blank"><h3 class="btn">Fork Off! <i class="fas fa-arrow-circle-right"></i></h3></a>
+                                    <a href="https://kylecom2000.github.io/TeamOne-ProjectOne/" target="_blank" rel="noopener noreferrer"><h3 class="btn">Fork Off! <i class="fas fa-arrow-circle-right"></i></h3></a>
                                     <h5>Team Project/APIs/GitHub</h5>
                                     <p>Google Maps and Zomato APIs used to retrieve local resturant info and Google Firebase database to sync 2 or more users to choose a resturant in a Tinder-like fashion.</p>
                                 </div>
                             </li>
                             <li>
-                                <img class="sliderImage" src="assets/images/CrystalCollector.png"></img>
+                                <img class="sliderImage" src="./images/CrystalCollector.png" alt="Crystal Collector"></img>
                                 <div class="caption right-align">
-                                    <a href="https://kylecom2000.github.io/unit-4-game/" target="_blank"><h3 class="btn">Crystal Collector <i class="fas fa-arrow-circle-right"></i></h3></a>
+                                    <a href="https://kylecom2000.github.io/unit-4-game/" target="_blank" rel="noopener noreferrer"><h3 class="btn">Crystal Collector <i class="fas fa-arrow-circle-right"></i></h3></a>
                                     <h5>Javascript/jQuery</h5>
                                     <p>Using jQuery and Javascript to manipulate HTML. CSS styling using Bootstrap.</p>
                                 </div>
                             </li>
                             <li>
-                                <img class="sliderImage" src="assets/images/GIPHY.png"></img>
+                                <img class="sliderImage" src="./images/GIPHY.png" alt="Giphy App"></img>
                                 <div class="caption left-align">
-                                    <a href="https://kylecom2000.github.io/GIPHYApp/" target="_blank"><h3 class="btn">Immortals <i class="fas fa-arrow-circle-right"></i></h3></a>
+                                    <a href="https://kylecom2000.github.io/GIPHYApp/" target="_blank" rel="noopener noreferrer"><h3 class="btn">Immortals <i class="fas fa-arrow-circle-right"></i></h3></a>
                                     <h5>GIPHY API/AJAX/jQuery</h5>
                                     <p>A simple app using JavaScript and jQuery to change HTML to populate GIFs and AJAX for retrieving data from GIPHY. Clicking changes the "data state" (animate/still). The search box adds buttons to page for querying GIPHY.</p>
                                 </div>
                             </li>
                             <li>
-                                <img class="sliderImage" src="assets/images/trivia.png"></img>
+                                <img class="sliderImage" src="./images/trivia.png" alt="Trivia"></img>
                                 <div class="caption right-align">
-                                    <a href="https://kylecom2000.github.io/TriviaGame/" target="_blank"><h3 class="btn">Trivia <i class="fas fa-arrow-circle-right"></i></h3></a>
+                                    <a href="https://kylecom2000.github.io/TriviaGame/" target="_blank" rel="noopener noreferrer"><h3 class="btn">Trivia <i class="fas fa-arrow-circle-right"></i></h3></a>
                                     <h5>jQuery Dom Manipulation</h5>
                                     <p>A random triva app using JavaScript and jQuery to manipulate HTML and keep track of answers.</p>
                                 </div>
@@ -244,13 +265,13 @@ class App extends Component {
                         </ul>
                     </div>
             </div>
-// Contact Section
+{/* // Contact Section */}
             <div class="section white center">
                 <h2 class="header center">Contact</h2>
                 <br/>
-                <a class="waves-effect black-text" href="https://github.com/kylecom2000" target="_blank"><i class="fab fa-github fa-2x fa-fw"></i>GitHub</a>
-                <a class="waves-effect black-text" href="https://www.linkedin.com/in/kylebauertx" target="_blank"><i class="fab fa-linkedin fa-2x fa-fw"></i>LinkedIn</a>
-                <a class="waves-effect black-text" href="https://www.instagram.com/kylecom2000/" target="_blank"><i class="fab fa-instagram fa-2x fa-fw"></i>Instagram</a>
+                <a class="waves-effect black-text" href="https://github.com/kylecom2000" target="_blank" rel="noopener noreferrer"><i class="fab fa-github fa-2x fa-fw"></i>GitHub</a>
+                <a class="waves-effect black-text" href="https://www.linkedin.com/in/kylebauertx" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin fa-2x fa-fw"></i>LinkedIn</a>
+                <a class="waves-effect black-text" href="https://www.instagram.com/kylecom2000/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram fa-2x fa-fw"></i>Instagram</a>
                 <br/>
                 {/* <a onclick="M.toast({html: 'Copied to Clipboard'})" class="waves-effect black-text email-address"><i class="fas fa-at fa-2x fa-fw"></i>Copy My Email Address</a> */}
                 <br/>
